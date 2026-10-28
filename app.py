@@ -17,6 +17,18 @@ with st.form("email_form"):
         type="password",
         help="Use a Google App Password, not your normal Gmail password. It is used only for this run.",
     )
+    st.link_button(
+        "Create or manage your Google App Password",
+        "https://myaccount.google.com/apppasswords",
+        help="Opens Google Account's App Passwords page in a new tab.",
+    )
+    with st.expander("How to generate a Gmail App Password"):
+        st.markdown(
+            "1. Open **Manage your Google Account** and sign in.\n"
+            "2. Select **Security** and make sure **2-Step Verification** is enabled.\n"
+            "3. Open **App passwords**, create a new password for this app, and copy the 16-character code.\n"
+            "4. Paste the code above. Spaces are removed automatically when connecting to Gmail."
+        )
     destinations_text = st.text_area(
         "Destination email addresses",
         placeholder="person1@example.com\nperson2@example.com",
